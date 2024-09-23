@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>python flask project</title>
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="stylesheet" href="{{  url_for('static', filename='css/index.css')}}">
+</head>
+<body id='demo'>
+
+
+
+    <h1 >Welcome to my Python Flask form!</h1>
+  
+    <form method="post">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" placeholder="Enter username" required>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" placeholder="Enter password" required>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" placeholder="Enter email" required>
+        <label for="message">Message:</label>
+        <textarea name="message" id="message" cols="30" rows="10" required></textarea>
+        <button type="submit">Save as</button>
+    </form>
+
+
+    <div>
+        {% if username %}
+        <span style='color:green'>Welcome {{ username }}</span>
+        {% elif error == true %}
+        <span style='color:red'>invalid user</span>
+        {% endif %}
+    </div>
+    
+</body>
+</html>

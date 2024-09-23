@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>python flask project</title>
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="stylesheet" href="{{  url_for('static', filename='css/index.css')}}">
+</head>
+<body id='demo'>
+
+
+
+    <h1 >Welcome to my Python Flask Project!</h1>
+    <button type='button' onclick='myfunction()'>Add style</button>
+    <p>You are {{ age }}</p>
+
+    {% if age >= 18 and age <=30  %}
+    <p>You are adult and your age {{ age }}</p>
+    {% elif age < 18 %}
+    <p>You are a child</p>
+
+    {% elif age >30 %}
+    <p>Age limitation is over and your age {{ age }}</p>
+    
+    {% endif %}
+
+    <h2>fruits list for {{ name }}</h2>
+    <ul>
+        {% for fruit in fruits %}
+        <li>{{ fruit }}</li>
+        {% endfor %}
+    </ul>
+
+
+    <script src="{{ url_for('static', filename='js/index.js')}} "></script>
+
+    
+    
+</body>
+</html>
